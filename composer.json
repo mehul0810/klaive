@@ -1,0 +1,15 @@
+{
+    "name": "mehulgohil/klaviyo-for-give",
+    "authors": [
+        {
+            "name": "Mehul Gohil",
+            "email": "hello@mehulgohil.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "KlaviyoForGive\\": "src/"
+        }
+    }
+}
