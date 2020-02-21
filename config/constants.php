@@ -1,4 +1,9 @@
 <?php
+// Bailout, if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Define plugin version in SemVer format.
 if ( ! defined( 'KLAVIYO_FOR_GIVE_VERSION' ) ) {
 	define( 'KLAVIYO_FOR_GIVE_VERSION', '1.0.0' );
