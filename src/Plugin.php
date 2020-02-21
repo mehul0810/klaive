@@ -20,13 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Loads and registers plugin functionality through WordPress hooks.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 final class Plugin {
+
 	/**
 	 * Registers functionality with WordPress hooks.
 	 *
-	 * @since 0.1.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function register() {
 		// Handle plugin activation and deactivation.
@@ -43,7 +47,10 @@ final class Plugin {
 	/**
 	 * Registers the individual services of the plugin.
 	 *
-	 * @since 0.1.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function register_services() {
 		// Register Admin Settings.
@@ -53,7 +60,10 @@ final class Plugin {
 	/**
 	 * Loads the plugin's translated strings.
 	 *
-	 * @since 0.1.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
@@ -66,19 +76,23 @@ final class Plugin {
 	/**
 	 * Handles activation procedures during installation and updates.
 	 *
-	 * @since 0.1.0
+	 * @since  1.0.0
+	 * @access public
 	 *
 	 * @param bool $network_wide Optional. Whether the plugin is being enabled on
 	 *                           all network sites or a single site. Default false.
+	 *
+	 * @return void
 	 */
-	public function activate( $network_wide = false ) {
-
-	}
+	public function activate( $network_wide = false ) {}
 
 	/**
 	 * Handles deactivation procedures.
 	 *
-	 * @since 0.1.0
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public function deactivate() {}
 }
