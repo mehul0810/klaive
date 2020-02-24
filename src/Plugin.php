@@ -34,8 +34,8 @@ final class Plugin {
 	 */
 	public function register() {
 		// Handle plugin activation and deactivation.
-		register_activation_hook( GIVEWP_PLUGIN_FILE, array( $this, 'activate' ) );
-		register_deactivation_hook( GIVEWP_PLUGIN_FILE, array( $this, 'deactivate' ) );
+		register_activation_hook( KLAVIYO_FOR_GIVE_PLUGIN_FILE, array( $this, 'activate' ) );
+		register_deactivation_hook( KLAVIYO_FOR_GIVE_PLUGIN_FILE, array( $this, 'deactivate' ) );
 
 		// Register services used throughout the plugin.
 		add_action( 'plugins_loaded', array( $this, 'register_services' ) );
@@ -69,7 +69,7 @@ final class Plugin {
 		load_plugin_textdomain(
 			'klaviyo-for-give',
 			false,
-			dirname( plugin_basename( GIVEWP_PLUGIN_FILE ) ) . '/resources/languages/'
+			dirname( plugin_basename( KLAVIYO_FOR_GIVE_PLUGIN_FILE ) ) . '/languages/'
 		);
 	}
 
