@@ -4,7 +4,13 @@
  *
  * @since 1.0.0
  */
+
 namespace KlaviyoForGive\Admin;
+
+// Bailout, if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Class Settings.
@@ -61,8 +67,13 @@ class Settings {
 			case 'klaviyo':
 				$settings = array(
 					array(
-						'id'   => 'give_title_klaviyo',
-						'type' => 'title',
+						'id'            => 'give_title_klaviyo',
+						'type'          => 'title',
+						'desc'          => sprintf(
+							__( 'Don\'t have a Klaviyo account? <a href="%1$s">Click here</a> to create your Klaviyo account now.', 'klaviyo-for-give' ),
+							esc_url_raw( 'https://www.klaviyo.com/partner/signup?utm_source=0013o00002RsCYO&utm_medium=partner' )
+						),
+						'wrapper_class' => 'klaviyo-for-give-heading-description'
 					),
 					array(
 						'name' => __( 'Klaviyo Settings', 'klaviyo-for-give' ),
@@ -92,13 +103,13 @@ class Settings {
 						'size' => 'regular',
 					),
 					array(
-						'id'   => 'klaviyo_for_give_selected_list',
+						'id'   => 'klaviyo_for_give_selected_list_globally',
 						'name' => __( 'Select a List', 'klaviyo-for-give' ),
 						'desc' => __( 'Select the list you wish to set as default for subscribe donors.', 'klaviyo-for-give' ),
 						'type' => 'klaviyo_select_list',
 					),
 					array(
-						'id'      => 'klaviyo_for_give_checked_default',
+						'id'      => 'klaviyo_for_give_is_checkbox_checked_globally',
 						'name'    => __( 'Opt-in Default', 'klaviyo-for-give' ),
 						'desc'    => __( 'Would you like the newsletter opt-in checkbox checked by default?', 'klaviyo-for-give' ),
 						'options' => array(
@@ -109,7 +120,7 @@ class Settings {
 						'type'    => 'radio_inline',
 					),
 					array(
-						'id'         => 'klaviyo_for_give_default_checkbox_text',
+						'id'         => 'klaviyo_for_give_checkbox_text_globally',
 						'name'       => __( 'Default Text', 'klaviyo-for-give' ),
 						'desc'       => __( 'This is the text shown next to the Sign Up Newsletter checkbox. This can also be customized per form.', 'klaviyo-for-give' ),
 						'type'       => 'text',
