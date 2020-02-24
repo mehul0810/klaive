@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return string
  */
-function klaviyo_for_give_get_api_key() {
+function get_api_key() {
 	return give_get_option( 'klaviyo_for_give_api_key', false );
 }
 
