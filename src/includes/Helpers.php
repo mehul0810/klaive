@@ -61,3 +61,24 @@ function is_subscribe_checkbox_checked( $form_id ) {
 
 	return $display;
 }
+
+/**
+ * This helper function is used to get the text of the subscribe checkbox.
+ *
+ * @param int $form_id Donation Form ID.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function get_subscribe_checkbox_text( $form_id ) {
+
+	$default_text = __( 'Subscribe to our newsletter', 'klaviyo-for-give' );
+	$text         = give_get_option( 'klaviyo_for_give_checkbox_text_globally', $default_text );
+
+	if ( $form_id > 0 ) {
+		$text = give_get_meta( $form_id, 'klaviyo_for_give_checkbox_text_per_form', true );
+	}
+
+	return $text;
+}
