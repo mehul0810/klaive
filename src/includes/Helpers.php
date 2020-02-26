@@ -44,12 +44,14 @@ trait Helpers {
 	 */
 	public static function show_subscribe_checkbox( $form_id ) {
 
-		$display_globally = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_enable_globally', 'enabled' ) );
-		$display_per_form = $form_id > 0 ?
-			give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) ) :
-			false;
+		$show_checkbox = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_enable_globally', 'enabled' ) );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
 
-		return $display_per_form ? $display_per_form : $display_globally;
+		if ( $show_per_form && $form_id > 0 ) {
+			$show_checkbox = $show_per_form;
+		}
+
+		return $show_checkbox;
 	}
 
 	/**
@@ -64,12 +66,14 @@ trait Helpers {
 	 */
 	public static function is_subscribe_checkbox_checked( $form_id ) {
 
-		$is_checked_globally = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_is_checkbox_checked_globally', 'enabled' ) );
-		$is_checked_per_form = $form_id > 0 ?
-			give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_is_checkbox_checked_per_form', true ) ) :
-			false;
+		$is_checked    = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_is_checkbox_checked_globally', 'enabled' ) );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
 
-		return $is_checked_per_form ? $is_checked_per_form : $is_checked_globally;
+		if ( $show_per_form && $form_id > 0 ) {
+			$is_checked = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_is_checkbox_checked_per_form', true ) );
+		}
+
+		return $is_checked;
 	}
 
 	/**
@@ -85,11 +89,13 @@ trait Helpers {
 	public static function get_subscribe_checkbox_text( $form_id ) {
 
 		$default_text  = __( 'Subscribe to our newsletter', 'klaviyo-for-give' );
-		$text_globally = give_get_option( 'klaviyo_for_give_checkbox_text_globally', $default_text );
-		$text_per_form = $form_id > 0 ?
-			give_get_meta( $form_id, 'klaviyo_for_give_checkbox_text_per_form', true ) :
-			false;
+		$checkbox_text = give_get_option( 'klaviyo_for_give_checkbox_text_globally', $default_text );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
 
-		return $text_per_form ? $text_per_form : $text_globally;
+		if ( $show_per_form && $form_id > 0 ) {
+			$checkbox_text = give_get_meta( $form_id, 'klaviyo_for_give_checkbox_text_per_form', true );
+		}
+
+		return $checkbox_text;
 	}
 }
