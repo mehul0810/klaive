@@ -11,6 +11,8 @@
 namespace KlaviyoForGive;
 
 use KlaviyoForGive\Admin\Settings;
+use KlaviyoForGive\Includes\Actions;
+use KlaviyoForGive\Includes\Helpers;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,6 +57,8 @@ final class Plugin {
 	public function register_services() {
 		// Register Admin Settings.
 		new Settings();
+
+		new Actions();
 	}
 
 	/**
