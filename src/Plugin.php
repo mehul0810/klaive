@@ -12,6 +12,7 @@ namespace KlaviyoForGive;
 
 use KlaviyoForGive\Admin\Settings;
 use KlaviyoForGive\Includes\Actions;
+use KlaviyoForGive\Includes\Filters;
 use KlaviyoForGive\Includes\Helpers;
 
 // Bailout, if accessed directly.
@@ -58,7 +59,11 @@ final class Plugin {
 		// Register Admin Settings.
 		new Settings();
 
+		// Register Frontend Actions.
 		new Actions();
+
+		// Register Frontend Filters
+		new Filters();
 	}
 
 	/**
