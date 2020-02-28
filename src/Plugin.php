@@ -56,6 +56,10 @@ final class Plugin {
 	 * @return void
 	 */
 	public function register_services() {
+
+		// Register Admin Actions.
+		new \KlaviyoForGive\Admin\Actions();
+
 		// Register Admin Settings.
 		new Settings();
 
