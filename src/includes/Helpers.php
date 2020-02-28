@@ -98,4 +98,38 @@ trait Helpers {
 
 		return $checkbox_text;
 	}
+
+	/**
+	 * This helper function is used to get API endpoint.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return string
+	 */
+	public static function get_api_endpoint() {
+		return 'https://a.klaviyo.com';
+	}
+
+	/**
+	 * This helper function is used to return all the lists.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return array
+	 */
+	public static function get_all_lists() {
+
+		$endpoint = self::get_api_endpoint() . '/api/v2/lists';
+		$api_key  = self::get_api_key();
+
+		$lists = wp_remote_retrieve_body( wp_safe_remote_get( $endpoint, [
+			'body' => [
+				'api_key' => $api_key,
+			],
+		] ) );
+
+		return json_decode( $lists );
+	}
 }
