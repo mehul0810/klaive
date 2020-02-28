@@ -15,7 +15,7 @@
     "lint:js-fix": "eslint assets/src/**/*.js blocks/**/*.js --fix",
     "lint:php": "./vendor/bin/phpcs --standard=WordPress",
     "lint:php:fix": "./vendor/bin/phpcbf --standard=WordPress",
-    "lint:textdomain": "node ./wp-textdomain.js",
+    "lint:textdomain": "node ./wp-textdomain.js"
   },
   "repository": {
     "type": "git",
