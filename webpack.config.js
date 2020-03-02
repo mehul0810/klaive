@@ -29,7 +29,6 @@ const config = {
 	externals: {
 		$: 'jQuery',
 		jquery: 'jQuery',
-		lodash: 'lodash',
 	},
 	devtool: ! inProduction ? 'source-map' : '',
 	module: {
@@ -40,17 +39,6 @@ const config = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
-			},
-
-			// Expose accounting.js for plugin usage.
-			{
-				test: require.resolve( 'accounting' ),
-				use: [
-					{
-						loader: 'expose-loader',
-						options: 'accounting',
-					},
-				],
 			},
 
 			// Create RTL styles.
@@ -86,34 +74,6 @@ const config = {
 						},
 					} ],
 			},
-
-			// Font files.
-			{
-				test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'fonts/[name].[ext]',
-							publicPath: '../',
-						},
-					},
-				],
-			},
-
-			// Image files.
-			{
-				test: /\.(png|jpe?g|gif|svg)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'images/[name].[ext]',
-							publicPath: '../',
-						},
-					},
-				],
-			},
 		],
 	},
 
@@ -126,8 +86,6 @@ const config = {
 		new MiniCSSExtractPlugin( {
 			filename: 'css/[name].css',
 		} ),
-
-		new CopyWebpackPlugin( [ { from: 'assets/src/images', to: 'images' } ] ),
 	],
 };
 
@@ -137,10 +95,6 @@ if ( inProduction ) {
 		suffix: '-rtl',
 		minify: true,
 	} ) );
-
-	// Minify images.
-	// Must go after CopyWebpackPlugin above: https://github.com/Klathmon/imagemin-webpack-plugin#example-usage
-	config.plugins.push( new ImageminPlugin( { test: /\.(jpe?g|png|gif|svg)$/i } ) );
 
 	// POT file.
 	wpPot( {
