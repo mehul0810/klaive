@@ -9,12 +9,10 @@
         "production": "cross-env NODE_ENV=production webpack",
         "build": "npm run production",
         "watch": "cross-env webpack --watch",
-        "lint": "npm run lint:js & npm run lint:scss & npm run lint:php",
-        "lint:js": "eslint assets/src/**/*.js blocks/**/*.js",
+        "lint": "npm run lint:js & npm run lint:scss",
+        "lint:js": "eslint assets/src/**/*.js",
         "lint:scss": "stylelint assets/src/**/*.scss",
-        "lint:js-fix": "eslint assets/src/**/*.js blocks/**/*.js --fix",
-        "lint:php": "./vendor/bin/phpcs --standard=WordPress",
-        "lint:php:fix": "./vendor/bin/phpcbf --standard=WordPress",
+        "lint:js-fix": "eslint assets/src/**/*.js --fix",
         "lint:textdomain": "node ./wp-textdomain.js"
     },
     "repository": {
