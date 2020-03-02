@@ -18,7 +18,7 @@ const config = {
 	mode,
 
 	entry: {
-		'klaviyo-for-give-admin': [ './assets/src/js/admin/main.js', './assets/src/css/admin/main.scss' ],
+		admin: [ './assets/src/js/admin/main.js', './assets/src/css/admin/main.scss' ],
 	},
 	output: {
 		path: path.join( __dirname, './assets/dist/' ),
