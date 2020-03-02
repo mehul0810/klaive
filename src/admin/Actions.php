@@ -52,7 +52,7 @@ class Actions {
 		$id    = esc_attr( $field['id'] );
 		$lists = Helpers::get_all_lists();
 		?>
-		<tr valign="top">
+		<tr valign="top" class="<?php echo esc_attr( $field['wrapper_class'] ); ?>">
 			<th scope="row" class="titledesc">
 				<label for="<?php echo $id; ?>">
 					<?php echo esc_attr( $field['name'] ); ?>
