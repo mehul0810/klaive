@@ -59,19 +59,23 @@ class Actions {
 				</label>
 			</th>
 			<td scope="row">
-				<select class="klaviyo-for-give-select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
-					<?php
-                    if ( is_array( $lists ) && count( $lists ) > 0 ) {
-                        foreach ( $lists as $list ) {
-                            echo sprintf(
-                                '<option value="%1$s">%2$s</option>',
+				<?php
+				if ( is_array( $lists ) && count( $lists ) > 0 ) {
+					?>
+					<select class="klaviyo-for-give-select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
+						<?php
+	                    foreach ( $lists as $list ) {
+	                        echo sprintf(
+	                            '<option value="%1$s">%2$s</option>',
 	                            $list->list_id,
-                                $list->list_name,
-                            );
-                        }
-                    }
-                    ?>
-				</select>
+	                            $list->list_name,
+	                        );
+	                    }
+	                    ?>
+					</select>
+					<?php
+				}
+				?>
 
 				<button class="klaviyo-for-give-refresh-button button-secondary" data-action="klaviyo_for_give_refresh_lists">
 					<?php echo esc_html__( 'Refresh Lists', 'klaviyo-for-give' ); ?>
