@@ -4,9 +4,7 @@
  * External dependencies
  */
 const path = require( 'path' );
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
-const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
 const wpPot = require( 'wp-pot' );
@@ -98,11 +96,10 @@ if ( inProduction ) {
 
 	// POT file.
 	wpPot( {
-		package: 'KlaviyoForGive',
+		package: 'Klaviyo-For-Give',
 		domain: 'klaviyo-for-give',
 		destFile: 'languages/klaviyo-for-give.pot',
 		relativeTo: './',
-		src: [ './**/*.php', '!./includes/libraries/**/*', '!./vendor/**/*' ],
 		bugReport: 'https://github.com/mehul0810/klaviyo-for-give/issues/new',
 		team: 'Mehul Gohil <hello@mehulgohil.com>',
 	} );
