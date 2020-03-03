@@ -68,7 +68,7 @@ class Actions {
 	                        echo sprintf(
 	                            '<option value="%1$s">%2$s</option>',
 	                            $list->list_id,
-	                            $list->list_name,
+	                            $list->list_name
 	                        );
 	                    }
 	                    ?>
