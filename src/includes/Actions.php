@@ -32,6 +32,7 @@ class Actions {
 	 */
 	public function __construct() {
 		add_action( 'give_donation_form_before_submit', array( $this, 'register_subscribe_newsletter_field' ), 100, 1 );
+		add_action( 'give_insert_payment', array( $this, 'subscribe_to_klaviyo' ), 10, 2 );
 	}
 
 	/**
@@ -68,6 +69,48 @@ class Actions {
 		</fieldset>
 		<?php
 		echo ob_get_clean();
+	}
+
+	/**
+	 * This function is used to subscribe donor to Klaviyo List.
+	 *
+	 * @param int   $donation_id   Donation ID.
+	 * @param array $donation_data Donation Data.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function subscribe_to_klaviyo( $donation_id, $donation_data ) {
+
+		$post_data     = give_clean( $_POST );
+		$is_subscribed = give_is_setting_enabled( $post_data['klaviyo_for_give_subscribe'] );
+
+		// Bailout, if not subscribed.
+		if ( ! $is_subscribed ) {
+			return;
+		}
+
+		$form_id  = $donation_data['give_form_id'];
+		$email    = $donation_data['user_info']['email'];
+		$list_id  = Helpers::get_list_id( $form_id );
+		$profiles = apply_filters( 'klaviyo_for_give_update_profiles', [
+			[
+				'email'         => $email,
+				'email_consent' => true,
+			]
+		] );
+
+		$response = Helpers::subscribe_to_list( $list_id, $profiles );
+		$response_code = wp_remote_retrieve_response_code( $response );
+
+		if ( 200 !== $response_code ) {
+			$response_message = wp_remote_retrieve_response_message( $response );
+
+			// Log error.
+			give_record_gateway_error( "Klaviyo for Give: {$response_code}", $response_message );
+		}
 	}
 }
 
