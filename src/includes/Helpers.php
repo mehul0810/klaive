@@ -132,4 +132,54 @@ trait Helpers {
 
 		return json_decode( $lists );
 	}
+
+	/**
+	 * This helper function is used to subscribe donor to Klaviyo list.
+	 *
+	 * @param string $list_id  List ID.
+	 * @param array  $profiles Profiles array.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return array|\WP_Error
+	 */
+	public static function subscribe_to_list( $list_id, $profiles ) {
+		$endpoint = self::get_api_endpoint();
+		$api_key  = self::get_api_key();
+		$url      =  "{$endpoint}/api/v2/list/{$list_id}/subscribe";
+
+		$body = [
+			'headers' => [
+				'Content-Type' => 'application/json',
+			],
+			'body' => wp_json_encode([
+				'api_key'  => $api_key,
+				'profiles' => $profiles,
+			]),
+		];
+
+		return wp_remote_post( $url, $body );
+	}
+
+	/**
+	 * This helper function is used to get selected list ID.
+	 *
+	 * @param int $form_id Donation Form ID.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return string
+	 */
+	public static function get_list_id( $form_id ) {
+		$list_id       = give_get_option( 'klaviyo_for_give_selected_list_globally' );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
+
+		if ( $show_per_form && $form_id > 0 ) {
+			$list_id = give_get_meta( $form_id, 'klaviyo_for_give_selected_list_per_form', true );
+		}
+
+		return $list_id;
+	}
 }
