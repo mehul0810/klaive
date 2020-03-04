@@ -1,5 +1,5 @@
 {
-    "name": "mehulgohil/klaviyo-for-give",
+    "name": "mehulgohil/klaive",
     "authors": [
         {
             "name": "Mehul Gohil",
@@ -9,7 +9,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "KlaviyoForGive\\": "src/"
+            "Klaive\\": "src/"
         }
     }
 }

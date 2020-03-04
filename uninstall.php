@@ -1,6 +1,6 @@
 <?php
 /**
- * Klaviyo for Give | Uninstall
+ * Klaive | Uninstall
  *
  * @since 1.0.0
  */

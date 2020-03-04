@@ -1,12 +1,12 @@
 <?php
 /**
- * Klaviyo for Give | Admin Actions
+ * Klaive | Admin Actions
  *
  * @since 1.0.0
  */
-namespace KlaviyoForGive\Admin;
+namespace Klaive\Admin;
 
-use KlaviyoForGive\Includes\Helpers;
+use Klaive\Includes\Helpers;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @package KlaviyoForGive\Admin
+ * @package Klaive\Admin
  */
 class Actions {
 
@@ -62,7 +62,7 @@ class Actions {
 				<?php
 				if ( is_array( $lists ) && count( $lists ) > 0 ) {
 					?>
-					<select class="klaviyo-for-give-select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
+					<select class="klaive--select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
 						<?php
 	                    foreach ( $lists as $list ) {
 	                        echo sprintf(
@@ -77,8 +77,8 @@ class Actions {
 				}
 				?>
 
-				<button class="klaviyo-for-give-refresh-button button-secondary" data-action="klaviyo_for_give_refresh_lists">
-					<?php echo esc_html__( 'Refresh Lists', 'klaviyo-for-give' ); ?>
+				<button class="klaive--refresh-button button-secondary" data-action="klaive_refresh_lists">
+					<?php echo esc_html__( 'Refresh Lists', 'klaive' ); ?>
 				</button>
 				<span class="give-spinner spinner"></span>
 				<p class="give-description"><?php echo esc_html( $field['desc'] ); ?></p>
@@ -99,15 +99,15 @@ class Actions {
 	public function enqueue_admin_assets() {
 
 		wp_enqueue_style(
-			'klaviyo-for-give-admin',
-			KLAVIYO_FOR_GIVE_PLUGIN_URL . 'assets/dist/css/admin.css'
+			'klaive--admin',
+			KLAIVE_PLUGIN_URL . 'assets/dist/css/admin.css'
 		);
 
 		wp_enqueue_script(
-			'klaviyo-for-give-admin',
-			KLAVIYO_FOR_GIVE_PLUGIN_URL . 'assets/dist/js/admin.js',
+			'klaive--admin',
+			KLAIVE_PLUGIN_URL . 'assets/dist/js/admin.js',
 			'',
-			KLAVIYO_FOR_GIVE_VERSION
+			KLAIVE_VERSION
 		);
 	}
 

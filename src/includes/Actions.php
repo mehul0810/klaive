@@ -1,12 +1,12 @@
 <?php
 /**
- * Klaviyo for Give | Actions
+ * Klaive | Actions
  *
  * @since 1.0.0
  */
-namespace KlaviyoForGive\Includes;
+namespace Klaive\Includes;
 
-use KlaviyoForGive\Includes\Helpers;
+use Klaive\Includes\Helpers;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @package KlaviyoForGive\Includes
+ * @package Klaive\Includes
  */
 class Actions {
 
@@ -57,12 +57,12 @@ class Actions {
 
 		ob_start();
 		?>
-		<fieldset id="klaviyo-for-give-<?php echo $form_id; ?>" class="klaviyo-for-give-fieldset">
+		<fieldset id="klaive--<?php echo $form_id; ?>" class="klaive--fieldset">
 			<p>
-				<input name="klaviyo_for_give_subscribe"
-				       id="klaviyo-for-give-<?php echo $form_id; ?>-subscribe"
+				<input name="klaive_subscribe"
+				       id="klaive--<?php echo $form_id; ?>-subscribe"
 				       type="checkbox" <?php echo( $is_checked ? 'checked="checked"' : '' ); ?>/>
-				<label for="klaviyo-for-give-<?php echo $form_id; ?>-subscribe">
+				<label for="klaive--<?php echo $form_id; ?>-subscribe">
 					<?php echo $label; ?>
 				</label>
 			</p>
@@ -85,7 +85,7 @@ class Actions {
 	public function subscribe_to_klaviyo( $donation_id, $donation_data ) {
 
 		$post_data     = give_clean( $_POST );
-		$is_subscribed = give_is_setting_enabled( $post_data['klaviyo_for_give_subscribe'] );
+		$is_subscribed = give_is_setting_enabled( $post_data['klaive_subscribe'] );
 
 		// Bailout, if not subscribed.
 		if ( ! $is_subscribed ) {
@@ -95,7 +95,7 @@ class Actions {
 		$form_id  = $donation_data['give_form_id'];
 		$email    = $donation_data['user_info']['email'];
 		$list_id  = Helpers::get_list_id( $form_id );
-		$profiles = apply_filters( 'klaviyo_for_give_update_profiles', [
+		$profiles = apply_filters( 'klaive_update_profiles', [
 			[
 				'email'         => $email,
 				'email_consent' => true,
@@ -109,7 +109,7 @@ class Actions {
 			$response_message = wp_remote_retrieve_response_message( $response );
 
 			// Log error.
-			give_record_gateway_error( "Klaviyo for Give: {$response_code}", $response_message );
+			give_record_gateway_error( "Klaive: {$response_code}", $response_message );
 		}
 	}
 }

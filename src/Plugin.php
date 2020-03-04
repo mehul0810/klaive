@@ -1,19 +1,10 @@
 <?php
-/**
- * Defines the core plugin class
- *
- * @link https://givewp.com
- *
- * @package GiveWP
- * @since 0.1.0
- */
+namespace Klaive;
 
-namespace KlaviyoForGive;
-
-use KlaviyoForGive\Admin\Settings;
-use KlaviyoForGive\Includes\Actions;
-use KlaviyoForGive\Includes\Filters;
-use KlaviyoForGive\Includes\Helpers;
+use Klaive\Admin\Settings;
+use Klaive\Includes\Actions;
+use Klaive\Includes\Filters;
+use Klaive\Includes\Helpers;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,8 +28,8 @@ final class Plugin {
 	 */
 	public function register() {
 		// Handle plugin activation and deactivation.
-		register_activation_hook( KLAVIYO_FOR_GIVE_PLUGIN_FILE, array( $this, 'activate' ) );
-		register_deactivation_hook( KLAVIYO_FOR_GIVE_PLUGIN_FILE, array( $this, 'deactivate' ) );
+		register_activation_hook( KLAIVE_PLUGIN_FILE, array( $this, 'activate' ) );
+		register_deactivation_hook( KLAIVE_PLUGIN_FILE, array( $this, 'deactivate' ) );
 
 		// Register services used throughout the plugin.
 		add_action( 'plugins_loaded', array( $this, 'register_services' ) );
@@ -58,7 +49,7 @@ final class Plugin {
 	public function register_services() {
 
 		// Register Admin Actions.
-		new \KlaviyoForGive\Admin\Actions();
+		new \Klaive\Admin\Actions();
 
 		// Register Admin Settings.
 		new Settings();
@@ -80,9 +71,9 @@ final class Plugin {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
-			'klaviyo-for-give',
+			'klaive',
 			false,
-			dirname( plugin_basename( KLAVIYO_FOR_GIVE_PLUGIN_FILE ) ) . '/languages/'
+			dirname( plugin_basename( KLAIVE_PLUGIN_FILE ) ) . '/languages/'
 		);
 	}
 

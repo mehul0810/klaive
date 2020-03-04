@@ -1,8 +1,8 @@
 document.addEventListener( 'DOMContentLoaded', () => {
 
-	const enableGlobally = document.querySelectorAll( 'input[name="klaviyo_for_give_enable_globally"]' );
-	const enablePerForm = document.querySelectorAll( 'input[name="klaviyo_for_give_enable_per_form"]' );
-	const wrappedSettingsField = document.querySelectorAll( '.klaviyo-for-give-wrapped-fields' );
+	const enableGlobally = document.querySelectorAll( 'input[name="klaive_enable_globally"]' );
+	const enablePerForm = document.querySelectorAll( 'input[name="klaive_enable_per_form"]' );
+	const wrappedSettingsField = document.querySelectorAll( '.klaive-wrapped-fields' );
 
 	Array.prototype.forEach.call( enableGlobally, ( radioElement ) => {
 		radioElement.addEventListener( 'change', ( e ) => {

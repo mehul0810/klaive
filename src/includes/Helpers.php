@@ -1,10 +1,10 @@
 <?php
 /**
- * Klaviyo for Give | Admin Settings
+ * Klaive | Admin Settings
  *
  * @since 1.0.0
  */
-namespace KlaviyoForGive\Includes;
+namespace Klaive\Includes;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @package KlaviyoForGive\Includes
+ * @package Klaive\Includes
  */
 trait Helpers {
 
@@ -29,7 +29,7 @@ trait Helpers {
 	 * @return string
 	 */
 	public static function get_api_key() {
-		return give_get_option( 'klaviyo_for_give_api_key', false );
+		return give_get_option( 'klaive_api_key', false );
 	}
 
 	/**
@@ -44,8 +44,8 @@ trait Helpers {
 	 */
 	public static function show_subscribe_checkbox( $form_id ) {
 
-		$show_checkbox = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_enable_globally', 'enabled' ) );
-		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
+		$show_checkbox = give_is_setting_enabled( give_get_option( 'klaive_enable_globally', 'enabled' ) );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaive_enable_per_form', true ) );
 
 		if ( $show_per_form && $form_id > 0 ) {
 			$show_checkbox = $show_per_form;
@@ -66,11 +66,11 @@ trait Helpers {
 	 */
 	public static function is_subscribe_checkbox_checked( $form_id ) {
 
-		$is_checked    = give_is_setting_enabled( give_get_option( 'klaviyo_for_give_is_checkbox_checked_globally', 'enabled' ) );
-		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
+		$is_checked    = give_is_setting_enabled( give_get_option( 'klaive_is_checkbox_checked_globally', 'enabled' ) );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaive_enable_per_form', true ) );
 
 		if ( $show_per_form && $form_id > 0 ) {
-			$is_checked = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_is_checkbox_checked_per_form', true ) );
+			$is_checked = give_is_setting_enabled( give_get_meta( $form_id, 'klaive_is_checkbox_checked_per_form', true ) );
 		}
 
 		return $is_checked;
@@ -88,12 +88,12 @@ trait Helpers {
 	 */
 	public static function get_subscribe_checkbox_text( $form_id ) {
 
-		$default_text  = __( 'Subscribe to our newsletter', 'klaviyo-for-give' );
-		$checkbox_text = give_get_option( 'klaviyo_for_give_checkbox_text_globally', $default_text );
-		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
+		$default_text  = __( 'Subscribe to our newsletter', 'klaive' );
+		$checkbox_text = give_get_option( 'klaive_checkbox_text_globally', $default_text );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaive_enable_per_form', true ) );
 
 		if ( $show_per_form && $form_id > 0 ) {
-			$checkbox_text = give_get_meta( $form_id, 'klaviyo_for_give_checkbox_text_per_form', true );
+			$checkbox_text = give_get_meta( $form_id, 'klaive_checkbox_text_per_form', true );
 		}
 
 		return $checkbox_text;
@@ -173,11 +173,11 @@ trait Helpers {
 	 * @return string
 	 */
 	public static function get_list_id( $form_id ) {
-		$list_id       = give_get_option( 'klaviyo_for_give_selected_list_globally' );
-		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaviyo_for_give_enable_per_form', true ) );
+		$list_id       = give_get_option( 'klaive_selected_list_globally' );
+		$show_per_form = give_is_setting_enabled( give_get_meta( $form_id, 'klaive_enable_per_form', true ) );
 
 		if ( $show_per_form && $form_id > 0 ) {
-			$list_id = give_get_meta( $form_id, 'klaviyo_for_give_selected_list_per_form', true );
+			$list_id = give_get_meta( $form_id, 'klaive_selected_list_per_form', true );
 		}
 
 		return $list_id;

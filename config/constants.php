@@ -5,21 +5,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin version in SemVer format.
-if ( ! defined( 'KLAVIYO_FOR_GIVE_VERSION' ) ) {
-	define( 'KLAVIYO_FOR_GIVE_VERSION', '1.0.0' );
+if ( ! defined( 'KLAIVE_VERSION' ) ) {
+	define( 'KLAIVE_VERSION', '1.0.0' );
 }
 
 // Define plugin root File.
-if ( ! defined( 'KLAVIYO_FOR_GIVE_PLUGIN_FILE' ) ) {
-	define( 'KLAVIYO_FOR_GIVE_PLUGIN_FILE', dirname( dirname( __FILE__ ) ) . '/klaviyo-for-give.php' );
+if ( ! defined( 'KLAIVE_PLUGIN_FILE' ) ) {
+	define( 'KLAIVE_PLUGIN_FILE', dirname( dirname( __FILE__ ) ) . '/klaive.php' );
 }
 
 // Define plugin directory Path.
-if ( ! defined( 'KLAVIYO_FOR_GIVE_PLUGIN_DIR' ) ) {
-	define( 'KLAVIYO_FOR_GIVE_PLUGIN_DIR', plugin_dir_path( KLAVIYO_FOR_GIVE_PLUGIN_FILE ) );
+if ( ! defined( 'KLAIVE_PLUGIN_DIR' ) ) {
+	define( 'KLAIVE_PLUGIN_DIR', plugin_dir_path( KLAIVE_PLUGIN_FILE ) );
 }
 
 // Define plugin directory URL.
-if ( ! defined( 'KLAVIYO_FOR_GIVE_PLUGIN_URL' ) ) {
-	define( 'KLAVIYO_FOR_GIVE_PLUGIN_URL', plugin_dir_url( KLAVIYO_FOR_GIVE_PLUGIN_FILE ) );
+if ( ! defined( 'KLAIVE_PLUGIN_URL' ) ) {
+	define( 'KLAIVE_PLUGIN_URL', plugin_dir_url( KLAIVE_PLUGIN_FILE ) );
 }

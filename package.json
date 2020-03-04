@@ -1,5 +1,5 @@
 {
-    "name": "klaviyo-for-give",
+    "name": "klaive",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -17,14 +17,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mehul0810/klaviyo-for-give.git"
+        "url": "git+https://github.com/mehul0810/klaive.git"
     },
     "author": "Mehul Gohil",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/mehul0810/klaviyo-for-give/issues"
+        "url": "https://github.com/mehul0810/klaive/issues"
     },
-    "homepage": "https://github.com/mehul0810/klaviyo-for-give#readme",
+    "homepage": "https://github.com/mehul0810/klaive#readme",
     "devDependencies": {
         "@babel/core": "^7.4.0",
         "@babel/plugin-syntax-jsx": "^7.2.0",

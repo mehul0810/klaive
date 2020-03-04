@@ -1,27 +1,28 @@
 <?php
 /**
- * Klaviyo for GiveWP
+ * Klaive WordPress Plugin
  *
- * @package           KlaviyoForGive
+ * @package           Klaive
  * @author            Mehul Gohil
  * @copyright         2020 Mehul Gohil <hello@mehulgohil.com>
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       Klaviyo for GiveWP
- * Plugin URI:        https://mehulgohil.com/plugins/klaviyo-for-givewp/
+ *
+ * Plugin Name:       Klaive - Connects Klaviyo with GiveWP
+ * Plugin URI:        https://mehulgohil.com/plugins/klaive/
  * Description:       Integrates Klaviyo with GiveWP.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            Mehul Gohil
  * Author URI:        https://mehulgohil.com
- * Text Domain:       klaviyo-for-give
+ * Text Domain:       klaive
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-namespace KlaviyoForGive;
+namespace Klaive;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

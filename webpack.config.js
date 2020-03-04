@@ -1,8 +1,3 @@
-/* globals process, __dirname, module  */
-
-/**
- * External dependencies
- */
 const path = require( 'path' );
 const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
@@ -96,11 +91,11 @@ if ( inProduction ) {
 
 	// POT file.
 	wpPot( {
-		package: 'Klaviyo-For-Give',
-		domain: 'klaviyo-for-give',
-		destFile: 'languages/klaviyo-for-give.pot',
+		package: 'Klaive',
+		domain: 'klaive',
+		destFile: 'languages/klaive.pot',
 		relativeTo: './',
-		bugReport: 'https://github.com/mehul0810/klaviyo-for-give/issues/new',
+		bugReport: 'https://github.com/mehul0810/klaive-/issues/new',
 		team: 'Mehul Gohil <hello@mehulgohil.com>',
 	} );
 }
