@@ -62,7 +62,7 @@ class Settings {
 	 */
 	public function register_settings( $settings ) {
 
-		$is_enabled_globally = give_get_option( 'klaive_enable_globally', 'disabled' );
+		$is_enabled_globally = give_is_setting_enabled( give_get_option( 'klaive_enable_globally', 'disabled' ) );
 
 		switch ( give_get_current_setting_section() ) {
 
