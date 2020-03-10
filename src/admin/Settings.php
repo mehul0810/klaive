@@ -63,6 +63,7 @@ class Settings {
 	public function register_settings( $settings ) {
 
 		$is_enabled_globally = give_is_setting_enabled( give_get_option( 'klaive_enable_globally', 'disabled' ) );
+		$api_key             = give_get_option( 'klaive_api_key' );
 
 		switch ( give_get_current_setting_section() ) {
 
@@ -104,7 +105,7 @@ class Settings {
 						'name'          => __( 'Select a List', 'klaive' ),
 						'desc'          => __( 'Select the list you wish to set as default for subscribe donors.', 'klaive' ),
 						'type'          => 'klaviyo_select_list',
-						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
+						'wrapper_class' => ! empty( $api_key ) ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 					),
 					array(
 						'id'            => 'klaive_is_checkbox_checked_globally',
