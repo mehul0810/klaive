@@ -7,6 +7,9 @@
 
 namespace Klaive\Admin;
 
+use Klaive\Includes\Helpers;
+use Klaive\Admin\Actions;
+
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -32,6 +35,7 @@ class Filters {
 	public function __construct() {
 		add_filter( 'give_metabox_form_data_settings', [ $this, 'add_metabox_fields' ], 10, 2 );
 		add_filter( 'plugin_action_links_' . plugin_basename( KLAIVE_PLUGIN_FILE ), [ $this, 'add_plugin_links' ] );
+		add_filter( 'give_get_field_callback', [ $this, 'update_metabox_fields_callback' ], 10, 2 );
 	}
 
 	/**
@@ -65,6 +69,12 @@ class Filters {
 					],
 				],
 				[
+					'name'          => __( 'Select a List', 'klaive' ),
+					'id'            => 'klaive_selected_list_per_form',
+					'type'          => 'klaviyo_select_list',
+					'wrapper_class' => $is_enabled_per_form ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
+				],
+				[
 					'name'          => __( 'Opt-in Default', 'klaive' ),
 					'id'            => 'klaive_is_checkbox_checked_per_form',
 					'type'          => 'radio_inline',
@@ -78,7 +88,6 @@ class Filters {
 				[
 					'name'          => __( 'Checkbox Text', 'klaive' ),
 					'id'            => 'klaive_checkbox_text_per_form',
-					'desc'          => __( 'This is the text shown next to the Sign Up Newsletter checkbox. This can also be customized per form.', 'klaive' ),
 					'type'          => 'text',
 					'size'          => 'regular',
 					'default'       => __( 'Subscribe to our newsletter', 'klaive' ),
@@ -114,5 +123,26 @@ class Filters {
 		asort( $links );
 
 		return $links;
+	}
+
+	/**
+	 * This function is used to update function name for metabox fields.
+	 *
+	 * @param string $func_name Function callback name.
+	 * @param array  $field     Metabox field arguments.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return array
+	 */
+	public function update_metabox_fields_callback( $func_name, $field ) {
+
+		if ( 'give_klaviyo_select_list' === $func_name ) {
+			$admin_action = new Actions();
+			$func_name    = [ $admin_action, 'klaviyo_select_list_metabox_field' ];
+		}
+
+		return $func_name;
 	}
 }

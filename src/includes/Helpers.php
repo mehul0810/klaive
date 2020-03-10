@@ -182,4 +182,45 @@ trait Helpers {
 
 		return $list_id;
 	}
+
+	/**
+	 * This function is used to prepare list HTML.
+	 *
+	 * @param array  $field List of field arguments.
+	 * @param string $value Selected Value.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public static function prepare_list_html( $field, $value ) {
+
+		$id    = esc_attr( $field['id'] );
+		$lists = self::get_all_lists();
+
+		if ( is_array( $lists ) && count( $lists ) > 0 ) {
+			?>
+			<select class="klaive-select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
+				<?php
+				foreach ( $lists as $list ) {
+					echo sprintf(
+						'<option %3$s value="%1$s">%2$s</option>',
+						$list->list_id,
+						$list->list_name,
+						( $list->list_id === $value ) ? 'selected="selected"' : ''
+					);
+				}
+				?>
+			</select>
+			<?php
+		}
+		?>
+
+		<button class="klaive-refresh-button button-secondary" data-action="klaive_refresh_lists">
+			<?php echo esc_html__( 'Refresh Lists', 'klaive' ); ?>
+		</button>
+		<span class="klaive-spinner give-spinner spinner"></span>
+		<?php
+	}
 }
