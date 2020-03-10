@@ -3,7 +3,7 @@ namespace Klaive;
 
 use Klaive\Admin\Settings;
 use Klaive\Includes\Actions;
-use Klaive\Includes\Filters;
+use Klaive\Admin\Filters;
 use Klaive\Includes\Helpers;
 
 // Bailout, if accessed directly.

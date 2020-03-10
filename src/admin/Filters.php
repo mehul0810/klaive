@@ -1,10 +1,11 @@
 <?php
 /**
- * Klaive | Filters
+ * Klaive | Admin Filters
  *
  * @since 1.0.0
  */
-namespace Klaive\Includes;
+
+namespace Klaive\Admin;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,6 +31,7 @@ class Filters {
 	 */
 	public function __construct() {
 		add_filter( 'give_metabox_form_data_settings', [ $this, 'add_metabox_fields' ], 10, 2 );
+		add_filter( 'plugin_action_links_' . plugin_basename( KLAIVE_PLUGIN_FILE ), [ $this, 'add_plugin_links' ] );
 	}
 
 	/**
@@ -86,5 +88,28 @@ class Filters {
 		];
 
 		return $settings;
+	}
+
+	/**
+	 * This function is used to add settings page link on plugins page.
+	 *
+	 * @param array $links List of links on plugin page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return array
+	 */
+	public function add_plugin_links( $links ) {
+
+		$links['settings'] = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			esc_url_raw( admin_url( 'edit.php?post_type=give_forms&page=give-settings&tab=addons&section=klaviyo' ) ),
+			__( 'Settings', 'klaive' )
+		);
+
+		asort( $links );
+
+		return $links;
 	}
 }
