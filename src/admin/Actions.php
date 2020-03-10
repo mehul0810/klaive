@@ -33,6 +33,7 @@ class Actions {
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ), 10 );
 		add_action( 'give_admin_field_klaviyo_select_list', array( $this, 'klaviyo_select_list' ), 10, 2 );
+		add_action( 'wp_ajax_klaive_refresh_lists', [ $this, 'refresh_klaviyo_list' ] );
 	}
 
 	/**
@@ -111,6 +112,36 @@ class Actions {
 		);
 	}
 
+	/**
+	 * This function will be used to refresh klaviyo list.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return string
+	 */
+	public function refresh_klaviyo_list() {
 
+		// Bailout, if the current user is not administrator.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$final_list = '';
+		$lists      = Helpers::get_all_lists();
+
+		if ( is_array( $lists ) && count( $lists ) > 0 ) {
+			foreach ( $lists as $list ) {
+				$final_list .= sprintf(
+					'<option value="%1$s">%2$s</option>',
+					$list->list_id,
+					$list->list_name
+				);
+			}
+		}
+
+		wp_send_json_success( $final_list );
+		give_die();
+	}
 }
 
