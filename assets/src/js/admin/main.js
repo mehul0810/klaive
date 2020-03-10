@@ -32,3 +32,28 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		} );
 	} );
 } );
+
+jQuery( document ).ready( function( $ ) {
+	$( '.klaive-refresh-button' ).on( 'click', function( e ) {
+
+		e.preventDefault();
+		const spinner = $(this).parent().find( '.give-spinner' );
+		const data    = {
+			'action': $( this ).attr( 'data-action' ),
+		};
+
+		// Enable Spinner.
+		spinner.attr( 'style', 'visibility: visible;');
+
+		// Perform AJAX Call.
+		$.post( ajaxurl, data, function( response ) {
+
+			// Disable Spinner.
+			spinner.attr( 'style', 'visibility: none;');
+
+			if ( response.success ) {
+				$( '.klaive-select-list' ).html( response.data );
+			}
+		} );
+	} );
+} );
