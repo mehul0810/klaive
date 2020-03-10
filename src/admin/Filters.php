@@ -37,6 +37,9 @@ class Filters {
 	/**
 	 * Add Metabox Fields.
 	 *
+	 * @param array $settings List of metabox settings.
+	 * @param int   $post_id  Donation Form ID.
+	 *
 	 * @since  1.0.0
 	 * @access public
 	 *
@@ -44,7 +47,7 @@ class Filters {
 	 */
 	public function add_metabox_fields( $settings, $post_id ) {
 
-		$is_enabled_per_form = give_get_meta( $post_id, 'klaive_enable_per_form', true );
+		$is_enabled_per_form = give_is_setting_enabled( give_get_meta( $post_id, 'klaive_enable_per_form', true ) );
 
 		$settings['klaive_per_form_settings'] = [
 			'id'        => 'klaive_per_form_settings',
