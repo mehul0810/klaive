@@ -1,6 +1,10 @@
-.klaive-heading-description {
+.klaive-heading-description-wrap {
 	background-color: #fff;
-	padding: 20px;
+
+	.klaive-heading-description {
+		padding: 20px;
+		display: inline-block;
+	}
 }
 
 .klaive-spinner {
