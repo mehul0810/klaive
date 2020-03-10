@@ -62,7 +62,7 @@ class Actions {
 				<?php
 				if ( is_array( $lists ) && count( $lists ) > 0 ) {
 					?>
-					<select class="klaive--select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
+					<select class="klaive-select-list" name="<?php echo $id; ?>" id="<?php echo $id; ?>">
 						<?php
 	                    foreach ( $lists as $list ) {
 	                        echo sprintf(
@@ -77,7 +77,7 @@ class Actions {
 				}
 				?>
 
-				<button class="klaive--refresh-button button-secondary" data-action="klaive_refresh_lists">
+				<button class="klaive-refresh-button button-secondary" data-action="klaive_refresh_lists">
 					<?php echo esc_html__( 'Refresh Lists', 'klaive' ); ?>
 				</button>
 				<span class="give-spinner spinner"></span>

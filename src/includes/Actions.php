@@ -57,12 +57,12 @@ class Actions {
 
 		ob_start();
 		?>
-		<fieldset id="klaive--<?php echo $form_id; ?>" class="klaive--fieldset">
+		<fieldset id="klaive-<?php echo $form_id; ?>" class="klaive-fieldset">
 			<p>
 				<input name="klaive_subscribe"
-				       id="klaive--<?php echo $form_id; ?>-subscribe"
+				       id="klaive-<?php echo $form_id; ?>-subscribe"
 				       type="checkbox" <?php echo( $is_checked ? 'checked="checked"' : '' ); ?>/>
-				<label for="klaive--<?php echo $form_id; ?>-subscribe">
+				<label for="klaive-<?php echo $form_id; ?>-subscribe">
 					<?php echo $label; ?>
 				</label>
 			</p>
