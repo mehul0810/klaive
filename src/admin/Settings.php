@@ -121,7 +121,7 @@ class Settings {
 					array(
 						'id'            => 'klaive_checkbox_text_globally',
 						'name'          => __( 'Default Text', 'klaive' ),
-						'desc'          => __( 'This is the text shown next to the Sign Up Newsletter checkbox. This can also be customized per form.', 'klaive' ),
+						'desc'          => __( 'This is the text shown next to the Sign Up Newsletter checkbox.', 'klaive' ),
 						'type'          => 'text',
 						'size'          => 'regular',
 						'attributes'    => array(
