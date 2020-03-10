@@ -81,7 +81,7 @@ class Actions {
 				<button class="klaive-refresh-button button-secondary" data-action="klaive_refresh_lists">
 					<?php echo esc_html__( 'Refresh Lists', 'klaive' ); ?>
 				</button>
-				<span class="give-spinner spinner"></span>
+				<span class="klaive-spinner give-spinner spinner"></span>
 				<p class="give-description"><?php echo esc_html( $field['desc'] ); ?></p>
 			</td>
 		</tr>
