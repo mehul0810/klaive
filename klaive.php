@@ -9,9 +9,9 @@
  *
  * @wordpress-plugin
  *
- * Plugin Name:       Klaive - Connects Klaviyo with GiveWP
+ * Plugin Name:       Klaive - Integrate Klaviyo with GiveWP
  * Plugin URI:        https://mehulgohil.com/plugins/klaive/
- * Description:       Integrates Klaviyo with GiveWP.
+ * Description:       Integrate Klaviyo with GiveWP for better email marketing campaigns.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.0
