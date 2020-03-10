@@ -70,7 +70,7 @@ class Filters {
 						'enabled'  => __( 'Checked', 'klaive' ),
 						'disabled' => __( 'Unchecked', 'klaive' ),
 					],
-					'wrapper_class' => $is_enabled_per_form ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+					'wrapper_class' => $is_enabled_per_form ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 				],
 				[
 					'name'          => __( 'Checkbox Text', 'klaive' ),
@@ -82,7 +82,7 @@ class Filters {
 					'attributes'    => array(
 						'placeholder' => __( 'Subscribe to our newsletter', 'klaive' ),
 					),
-					'wrapper_class' => $is_enabled_per_form ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+					'wrapper_class' => $is_enabled_per_form ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 				],
 			],
 		];

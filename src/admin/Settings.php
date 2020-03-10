@@ -73,7 +73,7 @@ class Settings {
 						'type'          => 'title',
 						'desc'          => sprintf(
 							__( '<div class="%1$s">Don\'t have a Klaviyo account? <a target="_blank" rel="noopener" href="%2$s">Click here</a> to create your Klaviyo account now.</div>', 'klaive' ),
-							'klaive--heading-description',
+							'klaive-heading-description',
 							esc_url_raw( 'https://www.klaviyo.com/partner/signup?utm_source=0013o00002RsCYO&utm_medium=partner' )
 						),
 					),
@@ -97,14 +97,14 @@ class Settings {
 						),
 						'type'          => 'text',
 						'size'          => 'regular',
-						'wrapper_class' => $is_enabled_globally ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 					),
 					array(
 						'id'            => 'klaive_selected_list_globally',
 						'name'          => __( 'Select a List', 'klaive' ),
 						'desc'          => __( 'Select the list you wish to set as default for subscribe donors.', 'klaive' ),
 						'type'          => 'klaviyo_select_list',
-						'wrapper_class' => $is_enabled_globally ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 					),
 					array(
 						'id'            => 'klaive_is_checkbox_checked_globally',
@@ -116,7 +116,7 @@ class Settings {
 						),
 						'default'       => 'enabled',
 						'type'          => 'radio_inline',
-						'wrapper_class' => $is_enabled_globally ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 					),
 					array(
 						'id'            => 'klaive_checkbox_text_globally',
@@ -127,7 +127,7 @@ class Settings {
 						'attributes'    => array(
 							'placeholder' => __( 'Subscribe to our newsletter', 'klaive' ),
 						),
-						'wrapper_class' => $is_enabled_globally ? 'klaive--wrapped-fields' : 'klaive--wrapped-fields give-hidden',
+						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 					),
 					array(
 						'id'   => 'give_title_klaviyo',

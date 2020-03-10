@@ -99,12 +99,12 @@ class Actions {
 	public function enqueue_admin_assets() {
 
 		wp_enqueue_style(
-			'klaive--admin',
+			'klaive-admin',
 			KLAIVE_PLUGIN_URL . 'assets/dist/css/admin.css'
 		);
 
 		wp_enqueue_script(
-			'klaive--admin',
+			'klaive-admin',
 			KLAIVE_PLUGIN_URL . 'assets/dist/js/admin.js',
 			'',
 			KLAIVE_VERSION
