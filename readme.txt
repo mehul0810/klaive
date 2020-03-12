@@ -1,4 +1,4 @@
-=== Klaive - Connects Klaviyo with Give ===
+=== Klaive - Integrates Klaviyo with Give ===
 Contributors: mehul0810
 Donate link: https://mehulgohil.com/donate
 Tags: klaviyo, givewp, give, donation, donations, email marketing
@@ -9,10 +9,24 @@ Stable tag: 1.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Subscribe donors to Klaviyo using GiveWP.
+This plugin will be used to integrate Klaviyo with GiveWP WordPress donation plugin.
 
 == Description ==
-Subscribe donors to Klaviyo using GiveWP.
+This plugin will be used to integrate Klaviyo with GiveWP WordPress donation plugin.
+
+Transform the way your donors subscribe to your newsletter using the donation form. With Klaive, you can provide a subscribe to newsletter option to your online donors to subscribe them to the innovative email marketing tool "Klaviyo".
+
+= What is Klaviyo? =
+[Klaviyo](https://mehulgohil.com/recommends/klaviyo/) is a tool that makes personalized marketing a breeze through data-driven decision making.
+
+= What is GiveWP? =
+[GiveWP](https://mehulgohil.com/recommends/givewp/) is the highest rated, most downloaded, and best supported donation plugin for WordPress.
+
+= Klaive Features =
+* Subscribe all the donation forms to single list of Klaviyo
+* Subscribe individual donation forms to separate list of Klaviyo
+* Able to change the subscribe to newsletter text
+* Able to pre-select the checkbox to subscribe
 
 == Upgrade Notice ==
 
