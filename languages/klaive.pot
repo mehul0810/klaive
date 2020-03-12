@@ -15,94 +15,98 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/admin/Actions.php:81
-msgid "Refresh Lists"
+#: src/admin/Filters.php:58
+msgid "Klaviyo Settings"
+msgstr ""
+
+#: src/admin/Filters.php:62
+msgid "Account Options"
+msgstr ""
+
+#: src/admin/Filters.php:67
+msgid "Global Options"
+msgstr ""
+
+#: src/admin/Filters.php:68
+msgid "Customize"
+msgstr ""
+
+#: src/admin/Filters.php:72, src/admin/Settings.php:106
+msgid "Select a List"
+msgstr ""
+
+#: src/admin/Filters.php:78, src/admin/Settings.php:113
+msgid "Opt-in Default"
+msgstr ""
+
+#: src/admin/Filters.php:83, src/admin/Settings.php:116
+msgid "Checked"
+msgstr ""
+
+#: src/admin/Filters.php:84, src/admin/Settings.php:117
+msgid "Unchecked"
+msgstr ""
+
+#: src/admin/Filters.php:89
+msgid "Checkbox Text"
+msgstr ""
+
+#: src/admin/Filters.php:93, src/admin/Filters.php:95, src/admin/Settings.php:130, src/includes/Helpers.php:91
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: src/admin/Filters.php:120
+msgid "Settings"
 msgstr ""
 
 #: src/admin/Settings.php:48
 msgid "Klaviyo"
 msgstr ""
 
-#: src/admin/Settings.php:75
-msgid "<div class=\"%1$s\">Don't have a Klaviyo account? <a target=\"_blank\" rel=\"noopener\" href=\"%2$s\">Click here</a> to create your Klaviyo account now.</div>"
+#: src/admin/Settings.php:76
+msgid "<div class=\"%1$s\"><span class=\"%2$s\">Don't have a Klaviyo account? <a target=\"_blank\" rel=\"noopener\" href=\"%3$s\">Click here</a> to create your Klaviyo account now.</span></div>"
 msgstr ""
 
-#: src/admin/Settings.php:82
+#: src/admin/Settings.php:84
 msgid "Enable Globally"
 msgstr ""
 
-#: src/admin/Settings.php:83
+#: src/admin/Settings.php:85
 msgid "Allow donors to sign up for the forms selected below on all donation forms?"
 msgstr ""
 
-#: src/admin/Settings.php:87
+#: src/admin/Settings.php:89
 msgid "Enabled"
 msgstr ""
 
-#: src/admin/Settings.php:88
+#: src/admin/Settings.php:90
 msgid "Disabled"
 msgstr ""
 
-#: src/admin/Settings.php:93
+#: src/admin/Settings.php:95
 msgid "API Key"
 msgstr ""
 
-#: src/admin/Settings.php:95
+#: src/admin/Settings.php:97
 msgid "Enter your Klaviyo API key. You may retrieve your Klaviyo API key from your <a href=\"%s\" target=\"_blank\">account settings</a>."
 msgstr ""
 
-#: src/admin/Settings.php:104
-msgid "Select a List"
-msgstr ""
-
-#: src/admin/Settings.php:105
+#: src/admin/Settings.php:107
 msgid "Select the list you wish to set as default for subscribe donors."
 msgstr ""
 
-#: src/admin/Settings.php:111, src/includes/Filters.php:63
-msgid "Opt-in Default"
-msgstr ""
-
-#: src/admin/Settings.php:112
+#: src/admin/Settings.php:114
 msgid "Would you like the newsletter opt-in checkbox checked by default?"
 msgstr ""
 
-#: src/admin/Settings.php:114, src/includes/Filters.php:68
-msgid "Checked"
-msgstr ""
-
-#: src/admin/Settings.php:115, src/includes/Filters.php:69
-msgid "Unchecked"
-msgstr ""
-
-#: src/admin/Settings.php:123
+#: src/admin/Settings.php:125
 msgid "Default Text"
 msgstr ""
 
-#: src/admin/Settings.php:124, src/includes/Filters.php:76
-msgid "This is the text shown next to the Sign Up Newsletter checkbox. This can also be customized per form."
+#: src/admin/Settings.php:126
+msgid "This is the text shown next to the Sign Up Newsletter checkbox."
 msgstr ""
 
-#: src/admin/Settings.php:128, src/includes/Filters.php:79, src/includes/Filters.php:81, src/includes/Helpers.php:91
-msgid "Subscribe to our newsletter"
-msgstr ""
-
-#: src/includes/Filters.php:49
-msgid "Klaviyo Settings"
-msgstr ""
-
-#: src/includes/Filters.php:53
-msgid "Account Options"
-msgstr ""
-
-#: src/includes/Filters.php:58
-msgid "Global Options"
-msgstr ""
-
-#: src/includes/Filters.php:59
-msgid "Customize"
-msgstr ""
-
-#: src/includes/Filters.php:74
-msgid "Checkbox Text"
+#: src/includes/Helpers.php:221
+msgid "Refresh Lists"
 msgstr ""
