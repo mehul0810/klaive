@@ -57,9 +57,12 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 == Frequently Asked Questions ==
 
 == Screenshots ==
+1. Global Settings screen for Klaive
+2. Per Donation Form Settings screen for Klaive
+3. Subscribe Checkbox screen on the donation form
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0 - 12th March 2020 =
 * Initial Release.
 
