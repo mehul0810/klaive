@@ -66,6 +66,7 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 = 1.0.1 - 15th August 2020 =
 * Resolved Fatal Error [#6](https://github.com/mehul0810/klaive/issues/6)
 * Added support for Appsero [#3](https://github.com/mehul0810/klaive/issues/3)
+* Security Improvements
 
 = 1.0.0 - 12th March 2020 =
 * Initial Release.
