@@ -3,9 +3,9 @@ Contributors: mehul0810
 Donate link: https://mehulgohil.com/donate
 Tags: klaviyo, givewp, give, donation, donations, email marketing
 Requires at least: 4.8
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
+Tested up to: 5.5
+Requires PHP: 7.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,10 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 3. Subscribe Checkbox screen on the donation form
 
 == Changelog ==
+
+= 1.0.1 - 15th August 2020 =
+* Resolved Fatal Error [#6](https://github.com/mehul0810/klaive/issues/6)
+* Added support for Appsero [#3](https://github.com/mehul0810/klaive/issues/3)
 
 = 1.0.0 - 12th March 2020 =
 * Initial Release.
