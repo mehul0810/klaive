@@ -4,7 +4,7 @@ namespace Klaive;
 use Klaive\Admin\Settings;
 use Klaive\Includes\Actions;
 use Klaive\Admin\Filters;
-use Klaive\Includes\Helpers;
+use Appsero\Client;
 
 // Bailout, if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,14 +28,14 @@ final class Plugin {
 	 */
 	public function register() {
 		// Handle plugin activation and deactivation.
-		register_activation_hook( KLAIVE_PLUGIN_FILE, array( $this, 'activate' ) );
-		register_deactivation_hook( KLAIVE_PLUGIN_FILE, array( $this, 'deactivate' ) );
+		register_activation_hook( KLAIVE_PLUGIN_FILE, [ $this, 'activate' ] );
+		register_deactivation_hook( KLAIVE_PLUGIN_FILE, [ $this, 'deactivate' ] );
 
 		// Register services used throughout the plugin.
-		add_action( 'plugins_loaded', array( $this, 'register_services' ) );
+		add_action( 'plugins_loaded', [ $this, 'register_services' ] );
 
 		// Load text domain.
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'init', [ $this, 'init' ] );
 	}
 
 	/**
@@ -59,6 +59,34 @@ final class Plugin {
 
 		// Register Frontend Filters
 		new Filters();
+	}
+
+	/**
+	 * Load on Init Hook.
+	 *
+	 * @since  1.0.1
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function init() {
+		$this->load_appsero();
+		$this->load_plugin_textdomain();
+	}
+
+	/**
+	 * Load Appsero.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function load_appsero() {
+		$client = new Client( 'fae452e4-5511-4b37-a828-ebfba78f7062', 'Klaive - Integrates Klaviyo with Give', KLAIVE_PLUGIN_FILE );
+
+		// Active insights.
+		$client->insights()->notice( 'Help us improve <strong>Klaive</strong> by allowing us to collect non-sensitive diagnostic data and usage informaiton.' )->init();
 	}
 
 	/**
