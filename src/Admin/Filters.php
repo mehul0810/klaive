@@ -91,9 +91,9 @@ class Filters {
 					'type'          => 'text',
 					'size'          => 'regular',
 					'default'       => __( 'Subscribe to our newsletter', 'klaive' ),
-					'attributes'    => array(
+					'attributes'    => [
 						'placeholder' => __( 'Subscribe to our newsletter', 'klaive' ),
-					),
+					],
 					'wrapper_class' => $is_enabled_per_form ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
 				],
 			],

@@ -6,7 +6,26 @@
             "email": "hello@mehulgohil.com"
         }
     ],
-    "require": {},
+    "require": {
+        "appsero/client": "^1.1",
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.6",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs || true",
+            "@install-codestandards"
+        ],
+        "post-update-cmd": [
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs || true"
+        ],
+        "install-codestandards": [
+            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "Klaive\\": "src/"

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define plugin version in SemVer format.
 if ( ! defined( 'KLAIVE_VERSION' ) ) {
-	define( 'KLAIVE_VERSION', '1.0.0' );
+	define( 'KLAIVE_VERSION', '1.0.1' );
 }
 
 // Define plugin root File.
