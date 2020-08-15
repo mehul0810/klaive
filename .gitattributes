@@ -21,3 +21,9 @@
 /phpcs.ruleset.xml export-ignore
 /phpunit.* export-ignore
 /README.md export-ignore
+/.huskyrc.json export-ignore
+/.lintstagedrc.json export-ignore
+/.prettierignore export-ignore
+/.prettierrc.json export-ignore
+/.stylelintrc.json export-ignore
+/wp-textdomain.js export-ignore
