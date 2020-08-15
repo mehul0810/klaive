@@ -30,8 +30,8 @@ class Settings {
 	 * @return void
 	 */
 	public function __construct() {
-		add_filter( 'give_get_sections_addons', array( $this, 'register_sections' ) );
-		add_filter( 'give_get_settings_addons', array( $this, 'register_settings' ) );
+		add_filter( 'give_get_sections_addons', [ $this, 'register_sections' ] );
+		add_filter( 'give_get_settings_addons', [ $this, 'register_settings' ] );
 	}
 
 	/**
@@ -68,29 +68,29 @@ class Settings {
 		switch ( give_get_current_setting_section() ) {
 
 			case 'klaviyo':
-				$settings = array(
-					array(
-						'id'            => 'give_title_klaviyo',
-						'type'          => 'title',
-						'desc'          => sprintf(
+				$settings = [
+					[
+						'id'   => 'give_title_klaviyo',
+						'type' => 'title',
+						'desc' => sprintf(
 							__( '<div class="%1$s"><span class="%2$s">Don\'t have a Klaviyo account? <a target="_blank" rel="noopener" href="%3$s">Click here</a> to create your Klaviyo account now.</span></div>', 'klaive' ),
 							'klaive-heading-description-wrap',
 							'klaive-heading-description',
 							esc_url_raw( 'https://www.klaviyo.com/partner/signup?utm_source=0013o00002RsCYO&utm_medium=partner' )
 						),
-					),
-					array(
+					],
+					[
 						'id'      => 'klaive_enable_globally',
 						'name'    => __( 'Enable Globally', 'klaive' ),
 						'desc'    => __( 'Allow donors to sign up for the forms selected below on all donation forms?', 'klaive' ),
 						'type'    => 'radio_inline',
 						'default' => 'enabled',
-						'options' => array(
+						'options' => [
 							'enabled'  => __( 'Enabled', 'klaive' ),
 							'disabled' => __( 'Disabled', 'klaive' ),
-						),
-					),
-					array(
+						],
+					],
+					[
 						'id'            => 'klaive_api_key',
 						'name'          => __( 'API Key', 'klaive' ),
 						'desc'          => sprintf(
@@ -100,42 +100,42 @@ class Settings {
 						'type'          => 'text',
 						'size'          => 'regular',
 						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
-					),
-					array(
+					],
+					[
 						'id'            => 'klaive_selected_list_globally',
 						'name'          => __( 'Select a List', 'klaive' ),
 						'desc'          => __( 'Select the list you wish to set as default for subscribe donors.', 'klaive' ),
 						'type'          => 'klaviyo_select_list',
 						'wrapper_class' => ! empty( $api_key ) ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
-					),
-					array(
+					],
+					[
 						'id'            => 'klaive_is_checkbox_checked_globally',
 						'name'          => __( 'Opt-in Default', 'klaive' ),
 						'desc'          => __( 'Would you like the newsletter opt-in checkbox checked by default?', 'klaive' ),
-						'options'       => array(
+						'options'       => [
 							'enabled'  => __( 'Checked', 'klaive' ),
 							'disabled' => __( 'Unchecked', 'klaive' ),
-						),
+						],
 						'default'       => 'enabled',
 						'type'          => 'radio_inline',
 						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
-					),
-					array(
+					],
+					[
 						'id'            => 'klaive_checkbox_text_globally',
 						'name'          => __( 'Default Text', 'klaive' ),
 						'desc'          => __( 'This is the text shown next to the Sign Up Newsletter checkbox.', 'klaive' ),
 						'type'          => 'text',
 						'size'          => 'regular',
-						'attributes'    => array(
+						'attributes'    => [
 							'placeholder' => __( 'Subscribe to our newsletter', 'klaive' ),
-						),
+						],
 						'wrapper_class' => $is_enabled_globally ? 'klaive-wrapped-fields' : 'klaive-wrapped-fields give-hidden',
-					),
-					array(
+					],
+					[
 						'id'   => 'give_title_klaviyo',
 						'type' => 'sectionend',
-					),
-				);
+					],
+				];
 				break;
 		}
 

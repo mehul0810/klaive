@@ -31,8 +31,8 @@ class Actions {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'give_donation_form_before_submit', array( $this, 'register_subscribe_newsletter_field' ), 100, 1 );
-		add_action( 'give_insert_payment', array( $this, 'subscribe_to_klaviyo' ), 10, 2 );
+		add_action( 'give_donation_form_before_submit', [ $this, 'register_subscribe_newsletter_field' ], 100, 1 );
+		add_action( 'give_insert_payment', [ $this, 'subscribe_to_klaviyo' ], 10, 2 );
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Actions {
 	 */
 	public function register_subscribe_newsletter_field( $form_id ) {
 
-	    // Bailout, if we don't need to show the subscribe checkbox.
+		// Bailout, if we don't need to show the subscribe checkbox.
 		if ( ! Helpers::show_subscribe_checkbox( $form_id ) ) {
 			return;
 		}
@@ -60,8 +60,8 @@ class Actions {
 		<fieldset id="klaive-<?php echo $form_id; ?>" class="klaive-fieldset">
 			<p>
 				<input name="klaive_subscribe"
-				       id="klaive-<?php echo $form_id; ?>-subscribe"
-				       type="checkbox" <?php echo( $is_checked ? 'checked="checked"' : '' ); ?>/>
+					   id="klaive-<?php echo $form_id; ?>-subscribe"
+					   type="checkbox" <?php echo( $is_checked ? 'checked="checked"' : '' ); ?>/>
 				<label for="klaive-<?php echo $form_id; ?>-subscribe">
 					<?php echo $label; ?>
 				</label>
@@ -95,14 +95,17 @@ class Actions {
 		$form_id  = $donation_data['give_form_id'];
 		$email    = $donation_data['user_info']['email'];
 		$list_id  = Helpers::get_list_id( $form_id );
-		$profiles = apply_filters( 'klaive_update_profiles', [
+		$profiles = apply_filters(
+			'klaive_update_profiles',
 			[
-				'email'         => $email,
-				'email_consent' => true,
+				[
+					'email'         => $email,
+					'email_consent' => true,
+				],
 			]
-		] );
+		);
 
-		$response = Helpers::subscribe_to_list( $list_id, $profiles );
+		$response      = Helpers::subscribe_to_list( $list_id, $profiles );
 		$response_code = wp_remote_retrieve_response_code( $response );
 
 		if ( 200 !== $response_code ) {
