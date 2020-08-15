@@ -17,10 +17,10 @@ This plugin will be used to integrate Klaviyo with GiveWP WordPress donation plu
 Transform the way your donors subscribe to your newsletter using the donation form. With Klaive, you can provide a subscribe to newsletter option to your online donors to subscribe them to the innovative email marketing tool "Klaviyo".
 
 = What is Klaviyo? =
-[Klaviyo](https://mehulgohil.com/recommends/klaviyo/) is a tool that makes personalized marketing a breeze through data-driven decision making.
+[Klaviyo](https://klaviyo.com) is a tool that makes personalized marketing a breeze through data-driven decision making.
 
 = What is GiveWP? =
-[GiveWP](https://mehulgohil.com/recommends/givewp/) is the highest rated, most downloaded, and best supported donation plugin for WordPress.
+[GiveWP](https://givewp.com) is the highest rated, most downloaded, and best supported donation plugin for WordPress.
 
 = Klaive Features =
 * Subscribe all the donation forms to single list of Klaviyo

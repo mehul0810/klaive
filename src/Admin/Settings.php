@@ -76,7 +76,7 @@ class Settings {
 							__( '<div class="%1$s"><span class="%2$s">Don\'t have a Klaviyo account? <a target="_blank" rel="noopener" href="%3$s">Click here</a> to create your Klaviyo account now.</span></div>', 'klaive' ),
 							'klaive-heading-description-wrap',
 							'klaive-heading-description',
-							esc_url_raw( 'https://www.klaviyo.com/partner/signup?utm_source=0013o00002RsCYO&utm_medium=partner' )
+							esc_url_raw( 'https://www.klaviyo.com/' )
 						),
 					],
 					[
