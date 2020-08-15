@@ -50,13 +50,17 @@
         "file-loader": "^3.0.1",
         "husky": "^4.0.7",
         "imagemin-webpack-plugin": "^2.4.0",
+        "jest": "^24.5.0",
+        "jest-puppeteer": "^4.1.0",
         "lint-staged": "^9.5.0",
         "mini-css-extract-plugin": "^0.5.0",
         "node-sass": "^4.11.0",
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "prettier": "^1.19.1",
+        "puppeteer": "^1.14.0",
         "sass-loader": "^7.1.0",
         "script-loader": "^0.7.2",
+        "style-loader": "^1.1.2",
         "stylelint": "^11.0.0",
         "stylelint-config-prettier": "^8.0.0",
         "stylelint-config-wordpress": "^13.1.0",
@@ -68,5 +72,9 @@
         "wp-pot": "^1.7.0",
         "wp-textdomain": "^1.0.1"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "engines": {
+        "node": "8.9.1",
+        "npm": "5.5.1"
+    }
 }
