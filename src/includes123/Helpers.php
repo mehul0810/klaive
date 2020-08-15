@@ -124,11 +124,16 @@ trait Helpers {
 		$endpoint = self::get_api_endpoint() . '/api/v2/lists';
 		$api_key  = self::get_api_key();
 
-		$lists = wp_remote_retrieve_body( wp_safe_remote_get( $endpoint, [
-			'body' => [
-				'api_key' => $api_key,
-			],
-		] ) );
+		$lists = wp_remote_retrieve_body(
+			wp_safe_remote_get(
+				$endpoint,
+				[
+					'body' => [
+						'api_key' => $api_key,
+					],
+				]
+			)
+		);
 
 		return json_decode( $lists );
 	}
@@ -147,16 +152,18 @@ trait Helpers {
 	public static function subscribe_to_list( $list_id, $profiles ) {
 		$endpoint = self::get_api_endpoint();
 		$api_key  = self::get_api_key();
-		$url      =  "{$endpoint}/api/v2/list/{$list_id}/subscribe";
+		$url      = "{$endpoint}/api/v2/list/{$list_id}/subscribe";
 
 		$body = [
 			'headers' => [
 				'Content-Type' => 'application/json',
 			],
-			'body' => wp_json_encode([
-				'api_key'  => $api_key,
-				'profiles' => $profiles,
-			]),
+			'body'    => wp_json_encode(
+				[
+					'api_key'  => $api_key,
+					'profiles' => $profiles,
+				]
+			),
 		];
 
 		return wp_remote_post( $url, $body );
